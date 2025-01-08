@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add Expense</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.title.label }} {{ form.title(size=32) }}
+    </div>
+    <div>
+        {{ form.amount.label }} {{ form.amount(size=32) }}
+    </div>
+    <div>
+        {{ form.category.label }} {{ form.category() }}
+        <div id="custom-category-container" style="display:none;">
+            {{ form.custom_category.label }} {{ form.custom_category(size=32) }}
+        </div>
+    </div>
+    <div>
+        {{ form.date.label }} {{ form.date() }}
+    </div>
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>
+
+<script>
+    document.getElementById('category').addEventListener('change', function() {
+        const customCategoryContainer = document.getElementById('custom-category-container');
+        if (this.value === 'Custom') {
+            customCategoryContainer.style.display = 'block';
+        } else {
+            customCategoryContainer.style.display = 'none';
+        }
+    });
+</script>
+{% endblock %}
