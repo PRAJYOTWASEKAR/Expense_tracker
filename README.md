@@ -47,6 +47,8 @@ A web application built with Flask, Python, HTML, CSS, and SQLite to help users 
    ```
 
 7. **Access the Application**: Open your web browser and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
+8. ![Home Page](Home%20page.png)
+
 
 ## Usage
 
